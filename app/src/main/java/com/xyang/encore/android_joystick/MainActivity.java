@@ -12,17 +12,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        JoystickView joystick = (JoystickView) findViewById(R.id.jsvLeft);
-        final TextView tv1 = (TextView) findViewById(R.id.tvAngleVal);
-        final TextView tv2 = (TextView) findViewById(R.id.tvStrengthVal);
-        tv1.setText("0");
-        tv2.setText("0");
-        joystick.setOnMoveListener(new JoystickView.OnMoveListener() {
+        JoystickView joystickT = (JoystickView) findViewById(R.id.jsvLeft);
+        JoystickView joystickB = (JoystickView) findViewById(R.id.jsvRight);
+        final TextView tvT1 = (TextView) findViewById(R.id.tvAngleTVal);
+        final TextView tvT2 = (TextView) findViewById(R.id.tvStrengthTVal);
+        final TextView tvB1 = (TextView) findViewById(R.id.tvAngleBVal);
+        final TextView tvB2 = (TextView) findViewById(R.id.tvStrengthBVal);
+        tvT1.setText("0");
+        tvT2.setText("0");
+        tvB1.setText("0");
+        tvB2.setText("0");
+        joystickT.setOnMoveListener(new JoystickView.OnMoveListener() {
             @Override
             public void onMove(int angle, int strength) {
                 // do whatever you want
-                tv1.setText(String.valueOf(angle));
-                tv2.setText(String.valueOf(strength));
+                tvT1.setText(String.valueOf(angle));
+                tvT2.setText(String.valueOf(strength));
+            }
+        });
+        joystickB.setOnMoveListener(new JoystickView.OnMoveListener() {
+            @Override
+            public void onMove(int angle, int strength) {
+                // do whatever you want
+                tvB1.setText(String.valueOf(angle));
+                tvB2.setText(String.valueOf(strength));
             }
         });
     }

@@ -11,47 +11,102 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.xyang.encore.android_joystick.MainActivity">
     <TextView
-        android:text="Angle"
+        android:text="AngleT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:id="@+id/tvAngle" />
+        android:id="@+id/tvAngleT" />
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/tvAngle"
+        android:layout_toRightOf="@+id/tvAngleT"
         android:layout_marginLeft="10dp"
-        android:id="@+id/tvAngleVal" />
+        android:id="@+id/tvAngleTVal" />
+    <TextView
+        android:text="AngleB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@+id/tvAngleTVal"
+        android:id="@+id/tvAngleB" />
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvAngleB"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/tvAngleBVal" />
+
 
     <TextView
-        android:text="Strength"
+        android:text="Strength T"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/tvAngle"
-        android:id="@+id/tvStrength" />
+        android:layout_below="@+id/tvAngleT"
+        android:layout_alignParentStart="true"
+        android:id="@+id/tvStrengthT" />
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/tvAngleVal"
-        android:layout_toRightOf="@+id/tvStrength"
+        android:layout_below="@+id/tvAngleTVal"
+        android:layout_toRightOf="@+id/tvStrengthT"
         android:layout_marginLeft="10dp"
-        android:id="@+id/tvStrengthVal" />
+        android:id="@+id/tvStrengthTVal" />
 
+    <TextView
+        android:text="Strength B"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/tvStrengthTVal"
+        android:layout_below="@+id/tvAngleB"
+        android:id="@+id/tvStrengthB" />
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tvAngleTVal"
+        android:layout_toRightOf="@+id/tvStrengthB"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/tvStrengthBVal" />
 
     <io.github.controlwear.virtual.joystick.android.JoystickView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
         custom:JV_buttonColor="@android:color/holo_blue_light"
         custom:JV_borderColor="@android:color/holo_green_light"
         custom:JV_backgroundColor="#11000000"
         custom:JV_borderWidth="1dp"
+        custom:JV_fixedCenter="false"
+        custom:JV_ratioSizeBorder="0.6"
+        custom:JV_ratioSizeButton="0.25"
         android:id="@+id/jsvLeft"
-        android:layout_below="@+id/tvStrength"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/tvStrengthTVal"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        custom:JV_ratioUICenterX="0.3" />
+
+    <io.github.controlwear.virtual.joystick.android.JoystickView
+        android:layout_width="match_parent"
+        custom:JV_buttonColor="@android:color/holo_blue_light"
+        custom:JV_borderColor="@android:color/holo_green_light"
+        custom:JV_backgroundColor="#11000000"
+        custom:JV_borderWidth="1dp"
+        custom:JV_fixedCenter="true"
+        custom:JV_ratioSizeBorder="0.6"
+        custom:JV_ratioSizeButton="0.25"
+        android:id="@+id/jsvRight"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/jsvLeft"
+        android:layout_height="220dp"
+        custom:JV_ratioUICenterX="0.3"
+        custom:JV_ratioUICenterY="0.5" />
+
 
 
 </RelativeLayout>
